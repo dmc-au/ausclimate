@@ -1,25 +1,58 @@
-// Bar chart
-new Chart(document.getElementById("bar-chart"), {
-    type: 'bar',
-    data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-      datasets: [
-        {
-          label: "Population (millions)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: [2478,5267,734,784,433]
-        }
-      ]
-    },
-    options: {
-      legend: { display: false },
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
-});
+// // Bar chart
+// new Chart(document.getElementById("bar-chart"), {
+//     type: 'bar',
+//     data: {
+//       labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+//       datasets: [
+//         {
+//           label: "Population (millions)",
+//           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+//           data: [2478,5267,734,784,433]
+//         }
+//       ]
+//     },
+//     options: {
+//       legend: { display: false },
+//       title: {
+//         display: true,
+//         text: 'Predicted world population (millions) in 2050'
+//       }
+//     }
+// });
 
+
+// Total Olympic Medal Count by Country (1896-2016)
+W = "#888"
+A = "#3e95cd";
+
+d3.csv('Data/Olympic/Kaggle2/olympic_rankings.csv')
+    .then(make_olympic);
+
+function make_olympic(countries) {
+    var countryLabels = countries.map(function(d) {return d.NOC});
+    var medalData = countries.map(function(d) {return d['Medal Val']});
+
+    var chart = new Chart(document.getElementById("olympic"), {
+        type: 'bar',
+        data: {
+          labels: countryLabels,
+          datasets: [
+            {
+              label: "Medal Count",
+              backgroundColor: [W,W,W,W,W,W,W,W,A,W],
+              data: medalData
+            }
+          ]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Total Olympic Medal Count by Country (1896-2016)'
+          }
+        }
+    });
+};
 
 // CO2 Emissions (t) Per Capita 
 d3.csv('Data/ClimateActionTracker/CAT_tCO2e_cap.csv')
@@ -37,20 +70,28 @@ function make_tCO2(years) {
           datasets: [{ 
               data: auData,
               label: "AU",
-              borderColor: "#3e95cd",
+              borderColor: A,
               fill: false
             }, { 
               data: worldData,
               label: "World",
-              borderColor: "#8e5ea2",
+              borderColor: W,
               fill: false
             } 
           ]
         },
         options: {
-          title: {
-            display: true,
-            text: 'CO2 Emissions (t) Per Capita'
+            // scales: {
+            //     yAxes: [{
+            //         display: true,
+            //         ticks: {
+            //             beginAtZero: true
+            //         }
+            //     }]
+            // },
+            title: {
+                display: true,
+                text: 'CO2 Emissions (t) Per Capita'
           }
         }
     });
@@ -73,20 +114,29 @@ function make_energy_demand(years) {
           datasets: [{ 
               data: auData,
               label: "AU",
-              borderColor: "#3e95cd",
+              borderColor: A,
               fill: false
             }, { 
               data: worldData,
               label: "World",
-              borderColor: "#8e5ea2",
+              borderColor: W,
               fill: false
             } 
           ]
         },
         options: {
-          title: {
-            display: true,
-            text: 'Energy Demand (GJ) Per Capita'
+            // scales: {
+            //     yAxes: [{
+            //         display: true,
+            //         ticks: {
+            //             suggestedMin: 20,
+            //             suggestedMax: 180
+            //         }
+            //     }]
+            // },
+            title: {
+                display: true,
+                text: 'Energy Demand (GJ) Per Capita'
           }
         }
     });
@@ -109,12 +159,12 @@ function make_renewables(years) {
           datasets: [{ 
               data: auData,
               label: "AU",
-              borderColor: "#3e95cd",
+              borderColor: A,
               fill: false
             }, { 
               data: worldData,
               label: "World",
-              borderColor: "#8e5ea2",
+              borderColor: W,
               fill: false
             } 
           ]
