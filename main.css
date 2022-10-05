@@ -1,3 +1,4 @@
+/* General styling */
 body {
     font: normal 18px/1.8em "Inter", "Source Sans Pro",
     "Helvetica Neue", Arial, sans-serif;
@@ -17,6 +18,10 @@ body {
     max-width: 100%;
     padding-top: 1em;
     padding-bottom: 1em;
+}
+
+.sup-text {
+    font-size: 0.6em
 }
 
 /* Big number styling */
@@ -58,4 +63,5 @@ body {
 .big-number {
     text-align: center;
     font-size: 500%;
+    color: 
 }

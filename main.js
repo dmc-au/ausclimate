@@ -21,6 +21,8 @@ function make_olympic(countries) {
           ]
         },
         options: {
+          // responsive: true,
+          // maintainAspectRatio: false,
           legend: { display: false },
           title: {
             display: true,
