@@ -18,3 +18,44 @@ body {
     padding-top: 1em;
     padding-bottom: 1em;
 }
+
+/* Big number styling */
+.big-number-container {
+    /* border: 1px solid red; */
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+}
+
+.big-number-inner-left {
+    /* border: 1px solid red; */
+    width: 50%;
+    float: left;
+    align-items: center;
+}
+
+.big-number-inner-right {
+    /* border: 1px solid red; */
+    width: 50%;
+    float: right;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.big-number-inner-upper {
+
+}
+
+.big-number-inner-lower {
+
+}
+
+.big-number-header {
+    text-align: center;
+}
+
+.big-number {
+    text-align: center;
+    font-size: 500%;
+}
