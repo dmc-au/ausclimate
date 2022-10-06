@@ -37,7 +37,7 @@
 37 New Zealand 53.7
 39 Japan 53.1
 39 Cyprus 53.0
-40 Austria 52.9 
+40 Austria 52.9
 41 Italy 52.7
 42 Estonia 52.7
 43 Greece 52.4
