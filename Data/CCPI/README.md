@@ -4,4 +4,4 @@
 https://en.wikipedia.org/wiki/Climate_Change_Performance_Index
 
 ## CCPI.org
-https://ccpi.org
+https://ccpi.org/downloads/

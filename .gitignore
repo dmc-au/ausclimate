@@ -2,3 +2,5 @@
 ./Images/BOM/Average Yearly Anomaly/
 **/.*
 **/~*
+Data/CCPI/Originals/
+**/logs

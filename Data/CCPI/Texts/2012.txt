@@ -1,0 +1,61 @@
+1 – –
+2 – –
+3 – –
+4 Sweden 68.1
+5 United Kingdom 67.4
+6 Germany 67.2
+7 Brazil 66.9
+8 France 66.3
+9 Switzerland 65.1
+10 Mexico 64.6
+11 Slovakia 64.0
+12 Denmark 63.9
+13 Belgium 63.8
+14 Portugal 62.9
+15 Norway 61.9
+16 Lithuania 61.4
+17 Ireland 60.9
+18 Hungary 60.7
+19 Malta 60.6
+20 Iceland 59.8
+21 Egypt*** 59.1
+22 Latvia 59.1
+23 India 58.6
+24 Thailand 58.4
+25 Morocco 57.9
+26 Indonesia 57.2
+27 Belarus 56.3
+28 Romania 55.9
+29 Slovenia 55.6
+30 Italy 55.4
+31 Luxembourg 55.2
+32 New Zealand 54.5
+33 Algeria 54.4
+34 Austria 54.3
+35 Spain 54.2
+36 Cyprus 54.0
+37 Finland 53.9
+38 South Africa 53.6
+39 Ukraine 53.3
+40 Estonia 53.0
+41 Korea, Rep. 52.3
+42 Netherlands 51.4
+43 Japan 51.1
+44 Bulgaria 51.1
+45 Argentina 50.8
+46 Czech Republic 50.4
+47 Greece 50.3
+48 Australia 49.8
+49 Malaysia 49.2
+50 Chinese Taipei 49.0
+51 Singapore 48.9
+52 USA 48.5
+53 Croatia 47.2
+54 Canada 46.3
+55 Russia 45.1
+56 Poland 45.1
+57 China 44.6
+58 Turkey 41.7
+59 Kazakhstan 38.1
+60 Iran 36.0
+61 Saudi Arabia 24.5

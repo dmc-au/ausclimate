@@ -1,0 +1,61 @@
+1 
+2 
+3 
+4 Denmark 72.61
+5 Sweden 69.37
+6 Portugal 67.81
+7 Switzerland 67.61
+8 Germany 67.54
+9 Ireland 67.48
+10 United Kingdom 67.33
+11 Malta 67.07
+12 Hungary 66.41
+13 Belgium 65.20
+14 Mexico 64.91
+15 France 64.74
+16 Slovak Republic 64.64
+17 Iceland 64.16
+18 Romania 62.67
+19 Ukraine 62.22
+20 Morocco 62.01
+21 Italy 61.26
+22 Slovenia 60.98
+23 Cyprus 60.94
+24 India 60.77
+25 Lithuania 60.23
+26 Luxembourg 59.56
+27 Spain 59.18
+28 Czech Republic 59.13
+29 Egypt 59.04
+30 Latvia 58.63
+31 Norway 58.38
+32 Thailand 58.32
+33 Brazil 58.20
+34 Austria 58.09
+35 Belarus 57.98
+36 Indonesia 57.07
+37 South Africa 56.70
+38 Finland 56.58
+39 Croatia 56.37
+40 Australia 55.39
+41 New Zealand 54.48
+42 Bulgaria 54.27
+43 United States 53.51
+44 Poland 52.47
+45 Estonia 52.45
+46 Algeria 52.34
+47 Japan 52.10
+48 Greece 52.04
+49 Netherlands 50.28
+50 Argentina 49.97
+51 Korea 49.93
+52 Chinese Taipei 49.40
+53 Singapore 49.13
+54 China 49.03
+55 Malaysia 47.53
+56 Russian Federation 46.65
+57 Turkey 46.60
+58 Canada 45.16
+59 Kazakhstan 39.96
+60 Islamic Rep. of Iran 35.81
+61 Saudi Arabia 26.90
