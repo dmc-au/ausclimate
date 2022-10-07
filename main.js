@@ -1,4 +1,5 @@
-W = "#888"
+// World and Aus graph colours
+W = "#999"
 A = "#3e95cd";
 
 d3.csv('Data/Olympic/Kaggle2/olympic_rankings.csv')
@@ -50,28 +51,69 @@ function make_tCO2(years) {
               data: auData,
               label: "AU",
               borderColor: A,
-              fill: false
+              backgroundColor: A,
+              fill: '+1'
             }, { 
               data: worldData,
               label: "World",
               borderColor: W,
-              fill: false
+              backgroundColor: W,
+              fill: 'origin'
             } 
           ]
         },
         options: {
-            // scales: {
-            //     yAxes: [{
-            //         display: true,
-            //         ticks: {
-            //             beginAtZero: true
-            //         }
-            //     }]
-            // },
-            title: {
+          title: {
                 display: true,
                 text: 'CO2 Emissions (t) Per Capita'
+          },
+          scales: {
+            yAxes: [{
+                stacked: false,
+                ticks: {
+                  suggestedMin: 0
+                }
+            }]
           }
+        }
+    });
+};
+
+
+// Australia's Climate Ranking
+d3.csv('Data/CCPI/aus.csv')
+    .then(make_ccpi);
+
+function make_ccpi(years) {
+    var yearLabels = years.map(function(d) {return d.Year});
+    var auData = years.map(function(d) {return d.Rank});
+
+    var chart = new Chart(document.getElementById("ccpi"), {
+        type: 'line',
+        data: {
+          labels: yearLabels,
+          datasets: [{ 
+              data: auData,
+              label: "AU",
+              borderColor: A,
+              fill: false
+            }
+          ]
+        },
+        options: {
+            title: {
+              display: true,
+              text: "Australia's Climate Ranking"
+            },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    reverse: true
+                  }
+                }
+              ]
+            }
         }
     });
 };
@@ -158,120 +200,52 @@ function make_renewables(years) {
 };
 
 
-// Bubble chart
-new Chart(document.getElementById("bubble-chart"), {
-    type: 'bubble',
-    data: {
-      labels: "Africa",
-      datasets: [
-        {
-          label: ["China"],
-          backgroundColor: "rgba(255,221,50,0.2)",
-          borderColor: "rgba(255,221,50,1)",
-          data: [{
-            x: 21269017,
-            y: 5.245,
-            r: 15
-          }]
-        }, {
-          label: ["Denmark"],
-          backgroundColor: "rgba(60,186,159,0.2)",
-          borderColor: "rgba(60,186,159,1)",
-          data: [{
-            x: 258702,
-            y: 7.526,
-            r: 10
-          }]
-        }, {
-          label: ["Germany"],
-          backgroundColor: "rgba(0,0,0,0.2)",
-          borderColor: "#000",
-          data: [{
-            x: 3979083,
-            y: 6.994,
-            r: 15
-          }]
-        }, {
-          label: ["Japan"],
-          backgroundColor: "rgba(193,46,12,0.2)",
-          borderColor: "rgba(193,46,12,1)",
-          data: [{
-            x: 4931877,
-            y: 5.921,
-            r: 15
+// Australian Corporate Emissions
+d3.csv("Data/NGER/Corporate/total_corporate.csv")
+    .then(make_corporate);
+
+function make_corporate(years) {
+    var yearLabels = years.map(function(d) {return d['years']});
+    var scope1Data = years.map(function(d) {return d['scope 1 sum']});
+    var scope2Data = years.map(function(d) {return d['scope 2 sum']});
+
+    var chart = new Chart(document.getElementById("corporate"), {
+      type: 'line',
+      data: {
+        labels: yearLabels,
+        datasets: [{ 
+            data: scope1Data,
+            label: "Scope 1",
+            borderColor: "#c45850",
+            backgroundColor: "#c45850",
+            fill: '+1',
+            pointRadius: 1
+          }, { 
+            data: scope2Data,
+            label: "Scope 2",
+            borderColor: "#e8c3b9",
+            backgroundColor: "#e8c3b9",
+            fill: 'origin',
+            pointRadius: 1
+          } 
+        ]
+      },
+      options: {
+        title: {
+              display: true,
+              text: 'Australian Corporate CO2 Emissions (Mt)'
+        },
+        scales: {
+          yAxes: [{
+              stacked: false,
+              ticks: {
+                suggestedMin: 0
+              }
           }]
         }
-      ]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }, scales: {
-        yAxes: [{ 
-          scaleLabel: {
-            display: true,
-            labelString: "Happiness"
-          }
-        }],
-        xAxes: [{ 
-          scaleLabel: {
-            display: true,
-            labelString: "GDP (PPP)"
-          }
-        }]
       }
-    }
-});
-
-
-// Bar chart: grouped
-new Chart(document.getElementById("bar-chart-grouped"), {
-    type: 'bar',
-    data: {
-      labels: ["1900", "1950", "1999", "2050"],
-      datasets: [
-        {
-          label: "Africa",
-          backgroundColor: "#3e95cd",
-          data: [133,221,783,2478]
-        }, {
-          label: "Europe",
-          backgroundColor: "#8e5ea2",
-          data: [408,547,675,734]
-        }
-      ]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Population growth (millions)'
-      }
-    }
-});
-
-
-// Bar chart: horizontal
-new Chart(document.getElementById("bar-chart-horizontal"), {
-    type: 'horizontalBar',
-    data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-      datasets: [
-        {
-          label: "Population (millions)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: [2478,5267,734,784,433]
-        }
-      ]
-    },
-    options: {
-      legend: { display: false },
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
-});
+  });
+};
 
 
 // Australian Small Scale Battery Installations
@@ -304,38 +278,3 @@ function make_battery(years) {
         }
     });
 };
-
-
-// Example Radar Chart
-new Chart(document.getElementById("radar-chart"), {
-    type: 'radar',
-    data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-      datasets: [
-        {
-          label: "1950",
-          fill: true,
-          backgroundColor: "rgba(179,181,198,0.2)",
-          borderColor: "rgba(179,181,198,1)",
-          pointBorderColor: "#fff",
-          pointBackgroundColor: "rgba(179,181,198,1)",
-          data: [8.77,55.61,21.69,6.62,6.82]
-        }, {
-          label: "2050",
-          fill: true,
-          backgroundColor: "rgba(255,99,132,0.2)",
-          borderColor: "rgba(255,99,132,1)",
-          pointBorderColor: "#fff",
-          pointBackgroundColor: "rgba(255,99,132,1)",
-          pointBorderColor: "#fff",
-          data: [25.48,54.16,7.61,8.06,4.45]
-        }
-      ]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Distribution in % of world population'
-      }
-    }
-});
