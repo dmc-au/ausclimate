@@ -215,6 +215,69 @@ function make_renewables(years) {
 };
 
 
+// Australian New Small Scale Solar Installations
+d3.csv("Data/NGER/Small Scale/smallscale_renewables.csv")
+    .then(make_small_renewables);
+
+function make_small_renewables(years) {
+    var yearLabels = years.map(function(d) {return d['Year']});
+    var solarData = years.map(function(d) {return d['Solar']});
+
+    var chart = new Chart(document.getElementById("solar"), {
+        type: 'bar',
+        data: {
+          labels: yearLabels,
+          datasets: [
+            {
+              label: "New Small Solar Systems",
+              backgroundColor: batteryColour,
+              data: batteryData
+            }
+          ]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Australian New Small Scale Solar Installations'
+          }
+        }
+    });
+};
+
+
+// Australian New Small Scale Battery Installations
+d3.csv("Data/NGER/Small Scale/smallscale_battery_numeric.csv")
+    .then(make_battery);
+
+function make_battery(years) {
+    var yearLabels = years.map(function(d) {return d['Installation year']});
+    var batteryData = years.map(function(d) {return d['Total']});
+    var batteryColour = years.map(function(d) {return A});
+
+    var chart = new Chart(document.getElementById("battery"), {
+        type: 'bar',
+        data: {
+          labels: yearLabels,
+          datasets: [
+            {
+              label: "No. New Batteries",
+              backgroundColor: batteryColour,
+              data: batteryData
+            }
+          ]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'No. Australian Small Scale Battery Installations Per Year'
+          }
+        }
+    });
+};
+
+
 // Australian Corporate Emissions
 d3.csv("Data/NGER/Corporate/total_corporate.csv")
     .then(make_corporate);
@@ -260,36 +323,4 @@ function make_corporate(years) {
         }
       }
   });
-};
-
-
-// Australian Small Scale Battery Installations
-d3.csv("Data/NGER/Small Scale/smallscale_battery_numeric.csv")
-    .then(make_battery);
-
-function make_battery(years) {
-    var yearLabels = years.map(function(d) {return d['Installation year']});
-    var batteryData = years.map(function(d) {return d['Total']});
-    var batteryColour = years.map(function(d) {return A});
-
-    var chart = new Chart(document.getElementById("battery"), {
-        type: 'bar',
-        data: {
-          labels: yearLabels,
-          datasets: [
-            {
-              label: "No. New Batteries",
-              backgroundColor: batteryColour,
-              data: batteryData
-            }
-          ]
-        },
-        options: {
-          legend: { display: false },
-          title: {
-            display: true,
-            text: 'No. Australian Small Scale Battery Installations Per Year'
-          }
-        }
-    });
 };

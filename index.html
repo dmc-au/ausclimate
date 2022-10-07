@@ -27,13 +27,26 @@
     
     <div id="container">
         <h1 id="title">Australia's Climate Challenge</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
+        <p>
+            The world is heating up, and so is Australia. The gif below is an amalgamation
+            of the Beareau of Meteorology's Mean Temperature Anomaly maps from 1911 to 2022.
         </p>
+
         <img id="BOM" class="graph" src="Images/BOM/AverageYearlyAnomaly_Final_100pc.gif"/>
 
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        <p>
+            We know we're a competitive bunch, and the world knows that too, especially
+            when it comes to sport. Between 1896 and 2016, Australian's have been on the
+            podium 1,320 times, ranking Australia 9th in the world for medal count. That's
+            an incredible given the size of our country.
+        </p>
 
+        <p>
+            But we're not competitive when it comes to climate change. According to the
+            Climate Change Performance Index (CCPI), Australia currently ranks 59th. In 2022
+            we <i>fell</i> 5 ranks. We're now below the United States (55th) and Russia (56th),
+            and <i>well</i> below China (38th) and many other first world nations.
         </p>
 
         <div class="big-number-container">
@@ -54,34 +67,58 @@
                 </div>
             </div>
         </div>
-
         <canvas id="olympic" class="graph"></canvas>
-
-        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-        
-            
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                
-        </p>
         <canvas id="ccpi" class="graph"></canvas>
+
+        <p>
+            My hope in writing this article is to visualise and communicate our current state of
+            affairs when it comes to climate, and to call on the Australian spirit to be
+            more competitive in this space.
+        </p>
+
+        <p>
+            The CCPI has specifically <i>not</i> awarded a top 3 (podium) place to any country
+            in its index ranking system since 2008, reasoning that <i>"No country is doing enough 
+            to prevent dangerous climate change."</i> This is an incredible opportunity for
+            Australia to step it up and be the leader in what's largely considered the world's 
+            biggest problem today.
+        </p>
+
+        <p>
+            The challenge is a big one. Over the past roughly 30 years, Australian citizens have,
+            on average, consumed 2.8 times more energy than the global average citizen, and have
+            contributed as much as a staggering 5 times more in greenhouse emissions.
+        </p>
+
+        <div class="big-number-container">
+            <h3 class="big-number-header">Average Australian Energy Consumption</h2>
+            <p class="big-number">2.8x</p>
+        </div>
         <canvas id="demand" class="graph"></canvas>
+        <div class="big-number-container">
+            <h3 class="big-number-header">Average Australian Greenhouse Emissions</h2>
+            <p class="big-number">5x</p>
+        </div>
         <canvas id="tco2e" class="graph"></canvas>
-            
+        
+        <p>
+            One positive aspect to the story is that we are closing in on the world average
+            proportion of renewables in our energy mix. Since 1990, our renewables proportion
+            has been half of that of the world average.
+        </p>
+        <div class="big-number-container">
+            <h3 class="big-number-header">Average Australian Renewables Proportion</h2>
+            <p class="big-number">1/2</p>
+        </div>
+        
         <canvas id="renewables" class="graph"></canvas>
-
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
+        <p>
+            Another is the uptake of 
         </p>
-        <canvas id="corporate" class="graph"></canvas>
+        <canvas id="solar" class="graph"></canvas> 
         <canvas id="battery" class="graph"></canvas>
-
-
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-
-        </p>
-
+        <canvas id="corporate" class="graph"></canvas>
+        
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
