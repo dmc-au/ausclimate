@@ -1,7 +1,11 @@
-// World and Aus graph colours
-W = "#999"
+// World, Aus, and 'blank' colours
+// W = "#999"
+W = "#8e5ea2";
 A = "#3e95cd";
+B = "#999";
 
+
+// Olympic rankings
 d3.csv('Data/Olympic/Kaggle2/olympic_rankings.csv')
     .then(make_olympic);
 
@@ -16,8 +20,9 @@ function make_olympic(countries) {
           datasets: [
             {
               label: "Medal Count",
-              backgroundColor: [W,W,W,W,W,W,W,W,A,W],
-              data: medalData
+              backgroundColor: [B,B,B,B,B,B,B,B,A,B],
+              data: medalData,
+
             }
           ]
         },
@@ -28,52 +33,6 @@ function make_olympic(countries) {
           title: {
             display: true,
             text: 'Total Olympic Medal Count by Country (1896-2016)'
-          }
-        }
-    });
-};
-
-
-// CO2 Emissions (t) Per Capita 
-d3.csv('Data/ClimateActionTracker/CAT_tCO2e_cap.csv')
-    .then(make_tCO2);
-
-function make_tCO2(years) {
-    var yearLabels = years.map(function(d) {return d.Year});
-    var auData = years.map(function(d) {return d.AU});
-    var worldData = years.map(function(d) {return d.World});
-
-    var chart = new Chart(document.getElementById("tco2e"), {
-        type: 'line',
-        data: {
-          labels: yearLabels,
-          datasets: [{ 
-              data: auData,
-              label: "AU",
-              borderColor: A,
-              backgroundColor: A,
-              fill: '+1'
-            }, { 
-              data: worldData,
-              label: "World",
-              borderColor: W,
-              backgroundColor: W,
-              fill: 'origin'
-            } 
-          ]
-        },
-        options: {
-          title: {
-                display: true,
-                text: 'CO2 Emissions (t) Per Capita'
-          },
-          scales: {
-            yAxes: [{
-                stacked: false,
-                ticks: {
-                  suggestedMin: 0
-                }
-            }]
           }
         }
     });
@@ -96,7 +55,8 @@ function make_ccpi(years) {
               data: auData,
               label: "AU",
               borderColor: A,
-              fill: false
+              fill: false,
+              pointRadius: 1
             }
           ]
         },
@@ -136,28 +96,79 @@ function make_energy_demand(years) {
               data: auData,
               label: "AU",
               borderColor: A,
-              fill: false
+              backgroundColor: A,
+              fill: '+1',
+              pointRadius: 1
             }, { 
               data: worldData,
               label: "World",
               borderColor: W,
-              fill: false
+              backgroundColor: W,
+              fill: 'origin',
+              pointRadius: 1
             } 
           ]
         },
         options: {
-            // scales: {
-            //     yAxes: [{
-            //         display: true,
-            //         ticks: {
-            //             suggestedMin: 20,
-            //             suggestedMax: 180
-            //         }
-            //     }]
-            // },
-            title: {
+          title: {
+              display: true,
+              text: 'Energy Demand (GJ) Per Capita'
+          },
+          scales: {
+            yAxes: [{
+                stacked: false,
+                ticks: {
+                  suggestedMin: 0
+                }
+            }]
+          }
+        }
+    });
+};
+
+
+// CO2 Emissions (t) Per Capita 
+d3.csv('Data/ClimateActionTracker/CAT_tCO2e_cap.csv')
+    .then(make_tCO2);
+
+function make_tCO2(years) {
+    var yearLabels = years.map(function(d) {return d.Year});
+    var auData = years.map(function(d) {return d.AU});
+    var worldData = years.map(function(d) {return d.World});
+
+    var chart = new Chart(document.getElementById("tco2e"), {
+        type: 'line',
+        data: {
+          labels: yearLabels,
+          datasets: [{ 
+              data: auData,
+              label: "AU",
+              borderColor: A,
+              backgroundColor: A,
+              fill: '+1',
+              pointRadius: 1
+            }, { 
+              data: worldData,
+              label: "World",
+              borderColor: W,
+              backgroundColor: W,
+              fill: 'origin',
+              pointRadius: 1
+            } 
+          ]
+        },
+        options: {
+          title: {
                 display: true,
-                text: 'Energy Demand (GJ) Per Capita'
+                text: 'CO2 Emissions (t) Per Capita'
+          },
+          scales: {
+            yAxes: [{
+                stacked: false,
+                ticks: {
+                  suggestedMin: 0
+                }
+            }]
           }
         }
     });
@@ -181,12 +192,16 @@ function make_renewables(years) {
               data: auData,
               label: "AU",
               borderColor: A,
-              fill: false
+              backgroundColor: A,
+              fill: 'origin',
+              pointRadius: 1
             }, { 
               data: worldData,
               label: "World",
               borderColor: W,
-              fill: false
+              backgroundColor: W,
+              fill: '-1',
+              pointRadius: 1
             } 
           ]
         },
