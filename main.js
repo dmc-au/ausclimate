@@ -222,6 +222,7 @@ d3.csv("Data/NGER/Small Scale/smallscale_renewables.csv")
 function make_small_renewables(years) {
     var yearLabels = years.map(function(d) {return d['Year']});
     var solarData = years.map(function(d) {return d['Solar']});
+    var solarColor = years.map(function(d) {return A});
 
     var chart = new Chart(document.getElementById("solar"), {
         type: 'bar',
@@ -230,8 +231,8 @@ function make_small_renewables(years) {
           datasets: [
             {
               label: "New Small Solar Systems",
-              backgroundColor: batteryColour,
-              data: batteryData
+              data: solarData,
+              backgroundColor: solarColor
             }
           ]
         },
@@ -248,12 +249,12 @@ function make_small_renewables(years) {
 
 // Australian New Small Scale Battery Installations
 d3.csv("Data/NGER/Small Scale/smallscale_battery_numeric.csv")
-    .then(make_battery);
+    .then(make_small_battery);
 
-function make_battery(years) {
+function make_small_battery(years) {
     var yearLabels = years.map(function(d) {return d['Installation year']});
     var batteryData = years.map(function(d) {return d['Total']});
-    var batteryColour = years.map(function(d) {return A});
+    var batteryColor = years.map(function(d) {return A});
 
     var chart = new Chart(document.getElementById("battery"), {
         type: 'bar',
@@ -261,9 +262,9 @@ function make_battery(years) {
           labels: yearLabels,
           datasets: [
             {
-              label: "No. New Batteries",
-              backgroundColor: batteryColour,
-              data: batteryData
+              label: "New Small Battery Systems",
+              data: batteryData,
+              backgroundColor: batteryColor
             }
           ]
         },
@@ -271,7 +272,7 @@ function make_battery(years) {
           legend: { display: false },
           title: {
             display: true,
-            text: 'No. Australian Small Scale Battery Installations Per Year'
+            text: 'Australian New Small Scale Battery Installations'
           }
         }
     });
