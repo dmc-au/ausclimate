@@ -208,7 +208,7 @@ function make_renewables(years) {
         options: {
           title: {
             display: true,
-            text: 'Proportion (%) of Renewable Energy Production'
+            text: 'Renewable Energy Production Proportion (%) of Total'
           }
         }
     });
@@ -292,21 +292,21 @@ function make_corporate(years) {
       type: 'line',
       data: {
         labels: yearLabels,
-        datasets: [{ 
-            data: scope1Data,
-            label: "Scope 1",
-            borderColor: "#c45850",
-            backgroundColor: "#c45850",
-            fill: '+1',
-            pointRadius: 1
-          }, { 
-            data: scope2Data,
-            label: "Scope 2",
-            borderColor: "#e8c3b9",
-            backgroundColor: "#e8c3b9",
-            fill: 'origin',
-            pointRadius: 1
-          } 
+        datasets: [{  
+          data: scope2Data,
+          label: "Scope 2",
+          borderColor: "#e8c3b9",
+          backgroundColor: "#e8c3b9",
+          fill: 'origin',
+          pointRadius: 1
+          }, {data: scope1Data,
+          label: "Scope 1",
+          borderColor: "#c45850",
+          backgroundColor: "#c45850",
+          fill: 'origin',
+          pointRadius: 1
+        }, 
+
         ]
       },
       options: {
@@ -316,9 +316,9 @@ function make_corporate(years) {
         },
         scales: {
           yAxes: [{
-              stacked: false,
+              stacked: true,
               ticks: {
-                suggestedMin: 0
+                // suggestedMin: 0
               }
           }]
         }
