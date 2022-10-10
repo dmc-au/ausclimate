@@ -27,8 +27,8 @@ function make_olympic(countries) {
           ]
         },
         options: {
-          // responsive: true,
-          // maintainAspectRatio: false,
+          responsive: true,
+          maintainAspectRatio: false,
           legend: { display: false },
           title: {
             display: true,
@@ -61,6 +61,8 @@ function make_ccpi(years) {
           ]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             title: {
               display: true,
               text: "Australia's Climate Ranking"
@@ -110,6 +112,8 @@ function make_energy_demand(years) {
           ]
         },
         options: {
+          responsive: true,
+          maintainAspectRatio: false,
           title: {
               display: true,
               text: 'Energy Demand (GJ) Per Capita'
@@ -158,6 +162,8 @@ function make_tCO2(years) {
           ]
         },
         options: {
+          responsive: true,
+          maintainAspectRatio: false,
           title: {
                 display: true,
                 text: 'CO2 Emissions (t) Per Capita'
@@ -206,6 +212,8 @@ function make_renewables(years) {
           ]
         },
         options: {
+          responsive: true,
+          maintainAspectRatio: false,
           title: {
             display: true,
             text: 'Renewable Energy Production Proportion (%) of Total'
@@ -237,6 +245,8 @@ function make_small_renewables(years) {
           ]
         },
         options: {
+          responsive: true,
+          maintainAspectRatio: false,
           legend: { display: false },
           title: {
             display: true,
@@ -269,6 +279,8 @@ function make_small_battery(years) {
           ]
         },
         options: {
+          responsive: true,
+          maintainAspectRatio: false,
           legend: { display: false },
           title: {
             display: true,
@@ -310,6 +322,8 @@ function make_corporate(years) {
         ]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         title: {
               display: true,
               text: 'Australian Corporate CO2 Emissions (Mt)'
